@@ -49,9 +49,6 @@ market.api.query.bitstamp(url = 'https://www.bitstamp.net/api/balance/',
 \url{https://www.bitstamp.net/api/}
 }
 \seealso{
-\code{\link{market.api.query}},
-\code{\link{market.api.query.mtgox}},
-\code{\link{market.api.query.btce}},
-\code{\link{market.api.query.kraken}}
+\code{\link{market.api.query}}
 }
 

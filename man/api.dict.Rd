@@ -16,9 +16,11 @@ any dictionary and can operate on any currency pairs. Run
 dictionary. Granularity of data is \code{c(market, base,
 quote, action)}. This dictionary can be edited/extended by
 user for new currency pairs.\cr Currently supported
-currency pairs: \itemize{ \item \code{mtgox: BTCUSD} \item
-\code{bitstamp: BTCUSD} \item \code{btce: LTCUSD, LTCBTC,
-NMCBTC} \item \code{kraken: BTCEUR, LTCEUR, BTCLTC} }
+currency pairs: \itemize{ \item \code{bitstamp: BTCUSD}
+\item \code{btce: BTCUSD, LTCUSD, LTCBTC, NMCBTC} \item
+\code{kraken: BTCEUR, LTCEUR, BTCLTC} \item
+\code{bitmarket: BTCPLN, LTCPLN} \item \code{mtgox: BTCUSD}
+}
 }
 \note{
 Do not use \code{api.dict} from untrusted source or read
@@ -27,7 +29,7 @@ was not fully tested, please follow the examples, if you
 find any bugs please report.
 }
 \author{
-Jan Gorecki, 2014-03-05
+Jan Gorecki, 2014-04-17
 }
 \keyword{datasets}
 

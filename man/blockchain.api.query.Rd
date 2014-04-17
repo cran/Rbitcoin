@@ -22,6 +22,10 @@ blockchain.api.query(..., method, verbose = getOption("Rbitcoin.verbose"))
   \code{getOption("Rbitcoin.verbose")} is used, by default
   \code{0}.}
 }
+\value{
+result returned by \code{fromJSON} function applied on the
+blockchain result, most probably the list.
+}
 \description{
 Query bitcoin related data from blockchain.info.
 }

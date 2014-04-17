@@ -45,9 +45,6 @@ market.api.query.mtgox(url = 'https://data.mtgox.com/api/2/BTCUSD/money/info',
 \url{https://bitbucket.org/nitrous/mtgox-api}
 }
 \seealso{
-\code{\link{market.api.query}},
-\code{\link{market.api.query.bitstamp}},
-\code{\link{market.api.query.btce}},
-\code{\link{market.api.query.kraken}}
+\code{\link{market.api.query}}
 }
 

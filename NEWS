@@ -1,3 +1,13 @@
+Rbitcoin 0.9
+==============
+* blockchain.api.process - blockchain.api.query with postprocessing of results
+* market.api.* support for new market: bitmarket
+* api.dict: minor fixes, some new currency pairs.
+* new utility functions:
+  * Rbitcoin.plot - plot of Rbitcoin results
+  * wallet manager - track assets on multiple wallet sources over time
+  * available wallet - wallet amounts subtract open orders amounts
+
 Rbitcoin 0.8.5
 ==============
 * some technical params (curl.verbose, ssl.verify, debug) removed from FUNs args. They are available as 'options'.

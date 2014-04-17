@@ -47,9 +47,6 @@ market.api.query.btce(url = 'https://btc-e.com/tapi',
 \url{https://btc-e.com/api/documentation}
 }
 \seealso{
-\code{\link{market.api.query}},
-\code{\link{market.api.query.mtgox}},
-\code{\link{market.api.query.bitstamp}},
-\code{\link{market.api.query.kraken}}
+\code{\link{market.api.query}}
 }
 

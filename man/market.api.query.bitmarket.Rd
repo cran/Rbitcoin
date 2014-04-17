@@ -1,8 +1,8 @@
-\name{market.api.query.kraken}
-\alias{market.api.query.kraken}
-\title{Send request to kraken market API}
+\name{market.api.query.bitmarket}
+\alias{market.api.query.bitmarket}
+\title{Send request to bitmarket market API}
 \usage{
-market.api.query.kraken(url, key, secret, req = list(),
+market.api.query.bitmarket(url, key, secret, req = list(),
   verbose = getOption("Rbitcoin.verbose"))
 }
 \arguments{
@@ -28,19 +28,24 @@ R object created by fromJSON decoded result from market's
 API call.
 }
 \description{
-Send request to kraken market API.
+Send request to bitmarket market API.
+}
+\note{
+Market specific bitmarket \code{method} param should be
+provided in \code{req} object.
 }
 \examples{
 \dontrun{
 # ticker
-market.api.query.kraken(url = 'https://api.kraken.com/0/public/Ticker?pair=XBTCZEUR')
+market.api.query.bitmarket(url = 'https://www.bitmarket.pl/json/LTCPLN/ticker.json')
 # wallet
-market.api.query.kraken(url = 'https://api.kraken.com/0/private/Balance',
-                        key = '', secret = '')
+market.api.query.bitmarket(url = 'https://www.bitmarket.pl/api2/',
+                           req = list(method = 'info'),
+                           key = '', secret = '')
 }
 }
 \references{
-\url{https://www.kraken.com/help/api}
+\url{https://www.bitmarket.pl/docs.php?file=api_private.html}
 }
 \seealso{
 \code{\link{market.api.query}}

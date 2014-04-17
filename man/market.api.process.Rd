@@ -24,8 +24,8 @@ market.api.process(market, currency_pair, action, req = list(), ...,
 
   \item{\dots}{objects to be passed to
   \code{\link{market.api.query}} \itemize{ \item auth
-  params: \code{key}, \code{secret}, \code{client_id} (used
-  on bitstamp), }}
+  params: \code{key}, \code{secret}, \code{client_id} (last
+  one used on bitstamp), }}
 
   \item{verbose}{integer. Rbitcoin processing messages,
   print to console if \code{verbose > 0}, each subfunction
@@ -46,7 +46,10 @@ market.api.process(market, currency_pair, action, req = list(), ...,
   Rbitcoin \code{\link{api.dict}}.}
 
   \item{raw.query.res}{logical skip post-processing are
-  return results only after fromJSON processing.}
+  return results only after fromJSON processing. Useful in
+  case of change results structure from market API. It can
+  always be manually post-processed as a workaround till
+  the Rbitcoin update.}
 }
 \value{
 Returned value depends on the \code{action} param. All
@@ -108,8 +111,7 @@ not all markets returns API call status information.
 market.api.process(market = 'kraken', currency_pair = c('BTC', 'EUR'), action='ticker')
 # get ticker from all markets and combine
 ticker_all <- rbindlist(list(
-  market.api.process(market = 'mtgox', currency_pair = c('BTC', 'USD'), action='ticker')
-  ,market.api.process(market = 'bitstamp', currency_pair = c('BTC', 'USD'), action='ticker')
+  market.api.process(market = 'bitstamp', currency_pair = c('BTC', 'USD'), action='ticker')
   ,market.api.process(market = 'btce', currency_pair = c('LTC', 'USD'), action='ticker')
   ,{Sys.sleep(10);
     market.api.process(market = 'btce', currency_pair = c('LTC', 'BTC'), action='ticker')}
@@ -128,8 +130,6 @@ market.api.process(market = 'kraken', currency_pair = c('BTC', 'EUR'), action = 
                    key = '', secret = '')
 # get wallet from all markets and combine
 wallet_all <- rbindlist(list(
-  #market.api.process(market = 'mtgox', currency_pair = c('BTC', 'USD'), action = 'wallet',
-  #                   key = '', secret = ''),
   market.api.process(market = 'bitstamp', currency_pair = c('BTC', 'USD'), action = 'wallet',
                      client_id = '', key = '', secret = ''),
   market.api.process(market = 'btce', currency_pair = c('LTC', 'USD'), action = 'wallet',

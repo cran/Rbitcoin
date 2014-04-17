@@ -7,7 +7,8 @@ market.api.query(market, ..., verbose = getOption("Rbitcoin.verbose"),
 }
 \arguments{
   \item{market}{character which identifies market on which
-  we want to send request: mtgox, bitstamp, btce, kraken.}
+  we want to send request: bitstamp, btce, kraken,
+  bitmarket.}
 
   \item{\dots}{objects to be passed to API: \code{url},
   \code{key}, \code{secret}, \code{req}, \code{client_id}
@@ -43,18 +44,15 @@ notation: \code{options(scipen=100)}.
 \examples{
 \dontrun{
 # ticker
-market.api.query(market = 'mtgox',
-                 url = 'https://data.mtgox.com/api/2/BTCUSD/money/ticker')
 market.api.query(market = 'bitstamp',
                  url = 'https://www.bitstamp.net/api/ticker/')
 market.api.query(market = 'btce',
                  url = 'https://btc-e.com/api/2/btc_usd/ticker')
 market.api.query(market = 'kraken',
                  url = 'https://api.kraken.com/0/public/Ticker?pair=XXBTZEUR')
+market.api.query(market = 'bitmarket',
+                 url = 'https://www.bitmarket.pl/json/LTCPLN/ticker.json')
 # wallet
-market.api.query(market = 'mtgox',
-                 url = 'https://data.mtgox.com/api/2/BTCUSD/money/info',
-                 key = '', secret = '')
 market.api.query(market = 'bitstamp',
                  url = 'https://www.bitstamp.net/api/balance/',
                  client_id = '', # bitstamp specific
@@ -65,6 +63,10 @@ market.api.query(market = 'btce',
                  key = '', secret = '')
 market.api.query(market = 'kraken',
                  url = 'https://api.kraken.com/0/private/Balance',
+                 key = '', secret = '')
+market.api.query(market = 'bitmarket',
+                 url = 'https://www.bitmarket.pl/api2/',
+                 req = list(method = 'info'),
                  key = '', secret = '')
 # order book
 market.api.query(market = 'kraken',
@@ -101,9 +103,10 @@ API documentation:
 }
 \seealso{
 \code{\link{market.api.process}},
-\code{\link{market.api.query.mtgox}},
 \code{\link{market.api.query.bitstamp}},
 \code{\link{market.api.query.btce}},
-\code{\link{market.api.query.kraken}}
+\code{\link{market.api.query.kraken}},
+\code{\link{market.api.query.bitmarket}},
+\code{\link{market.api.query.mtgox}}
 }
 
