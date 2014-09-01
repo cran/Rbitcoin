@@ -1,3 +1,11 @@
+Rbitcoin 0.9.2
+==============
+* added packageStartupMessage about future changes
+* ssl.verifyhost curl option update
+* fix in api.dict for bitmarket place_limit_order
+* minor fixes to wallet_manager and its Rbitcoin.plot
+* minor doc fixes
+
 Rbitcoin 0.9
 ==============
 * blockchain.api.process - blockchain.api.query with postprocessing of results
